@@ -10,7 +10,7 @@ with open('contactos.csv', newline='', encoding='utf-8') as csv_file, \
     # Lee los datos del archivo CSV y convierte cada fila a un registro LDIF
     csv_reader = csv.reader(csv_file, delimiter=',')
     for row in csv_reader:
-        dn = 'cn={},ou=People,dc=adimacon,dc=com'.format(row[1])
+        dn = 'cn={},ou=People,dc=example,dc=com'.format(row[1])
         attrs = {
             'objectClass': ['top', 'person', 'organizationalPerson', 'inetOrgPerson'],
             'cn': [str(row[0])],
